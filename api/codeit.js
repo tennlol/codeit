@@ -25,7 +25,7 @@ export default async function handler(req, res) {
         "Authorization": `Bearer ${process.env.GPT_API_KEY}`
       },
       body: JSON.stringify({
-        model: "gpt-5.2-nano",
+        model: "gpt-4o-mini",
         messages: [{ role: "user", content: input }],
         max_tokens: 800
       })
