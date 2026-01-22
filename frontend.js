@@ -12,7 +12,7 @@ async function askCodeIt() {
     });
 
     const data = await res.json();
-    out.textContent = data.choices?.[0]?.message?.content || "no response";
+    out.textContent = data?.choices?.[0]?.message?.content ?? JSON.stringify(data) ?? "No response";
   } catch (err) {
     out.textContent = "error: " + err.message;
   }
