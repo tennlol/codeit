@@ -1,14 +1,15 @@
 // Forking? Get a OpenAI API Key first. This handles the POST requests and the key. 
 export default async function handler(req, res) {
+res.setHeader("Access-Control-Allow-Origin", "*");
+res.setHeader("Access-Control-Allow-Methods", "POST");
+res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "method not allowed" });
+    return res.status(405).json({ error: "Status: 405 -- Method is not allowed due to security." });
   }
 
   const { input } = req.body;
-
-  if (!input) {
-    return res.status(400).json({ error: "no input" });
-  }
+  if (!input) return res.status(400).json({ error: "Status 400 -- No input" });
 
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
