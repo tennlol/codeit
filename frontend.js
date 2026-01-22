@@ -1,3 +1,4 @@
+// This is a frontend for the OpenAI server. Forking? Get a Vercel app and a OpenAI API key.
 async function askCodeIt() {
   const code = document.getElementById("userCode").value;
   const out = document.getElementById("output");
