@@ -1,9 +1,14 @@
 // Forking? Get a OpenAI API Key first. This handles the POST requests and the key. 
 export default async function handler(req, res) {
-  // CORS headers so GitHub Pages can fetch
+  // CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // handle preflight
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
 
   if (req.method !== "POST") {
     return res.status(405).json({ error: "method not allowed" });
