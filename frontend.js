@@ -2,7 +2,7 @@
 async function askCodeIt() {
   const code = document.getElementById("userCode").value;
   const out = document.getElementById("output");
-  out.textContent = "thinking...";
+  out.textContent = "Generating...";
 
   try {
     const res = await fetch("https://codeit-two.vercel.app/api/codeit", {
