@@ -1,149 +1,52 @@
-/* ======= COLORS ======= */
-:root {
-  --bg-light: #f7f7f7;
-  --bg-dark: #1e1e2f;
-  --text-light: #111;
-  --text-dark: #eee;
-  --accent: #4f46e5;
-  --button-bg: #4f46e5;
-  --button-text: #fff;
-  --button-hover: #3730a3;
-  --output-bg-light: #fff;
-  --output-bg-dark: #2a2a3d;
-  --border-radius: 12px;
-  --shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ======= BASE ======= */
 body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background 0.3s, color 0.3s;
+  font-family: system-ui, sans-serif;
+  margin: 40px;
+  background-color: #fefefe;
+  color: #111;
+  transition: all 0.3s ease;
 }
 
 .dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
+  background-color: #111;
+  color: #fefefe;
 }
 
-/* ======= CONTAINER ======= */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-/* ======= HEADER ======= */
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: var(--accent);
-}
-
-/* ======= TEXTAREA ======= */
-textarea {
-  width: 100%;
-  height: 150px;
-  padding: 15px;
-  font-family: 'Courier New', monospace;
+input, button {
+  font-family: inherit;
   font-size: 1rem;
-  border-radius: var(--border-radius);
+  border-radius: 6px;
   border: 1px solid #ccc;
-  box-shadow: var(--shadow);
-  resize: vertical;
-  transition: background 0.3s, color 0.3s, border 0.3s;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
-.dark-mode textarea {
-  background-color: #2a2a3d;
-  color: #eee;
-  border: 1px solid #444;
+input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
 }
 
-/* ======= BUTTON ======= */
 button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 12px 25px;
-  margin-top: 10px;
-  border: none;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
 }
 
 button:hover {
-  background-color: var(--button-hover);
+  background-color: #3730a3;
 }
 
-/* ======= OUTPUT ======= */
-#output {
-  width: 100%;
-  min-height: 150px;
-  margin-top: 15px;
-  padding: 15px;
-  background-color: var(--output-bg-light);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  white-space: pre-wrap;
-  overflow-x: auto;
-  transition: background 0.3s, color 0.3s;
+pre {
+  background-color: #f1f1f1;
+  color: #111;
+  padding: 12px;
+  border-radius: 6px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: monospace;
 }
 
-.dark-mode #output {
-  background-color: var(--output-bg-dark);
-  color: #eee;
-}
-
-/* ======= LIGHT/DARK TOGGLE ======= */
-.toggle-mode {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-.toggle-mode button {
-  padding: 8px 15px;
-  font-size: 0.9rem;
-}
-
-/* ======= DISCLAIMER / ADS ======= */
-.disclaimer {
-  font-size: 12px;
-  color: #666;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.dark-mode .disclaimer {
-  color: #aaa;
-}
-
-/* ======= SCROLLBAR ======= */
-#output::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-
-#output::-webkit-scrollbar-thumb {
-  background-color: var(--accent);
-  border-radius: 8px;
-}
-
-#output::-webkit-scrollbar-track {
-  background: #ccc;
-  border-radius: 8px;
-}
-
-.dark-mode #output::-webkit-scrollbar-track {
-  background: #333;
+.dark-mode pre {
+  background-color: #222;
+  color: #fefefe;
 }
