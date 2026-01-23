@@ -4,4 +4,7 @@
 > [!CAUTION]
 > This is in work in progress and is actively being worked in.
 
+> [!WARNING]
+> I need money to use ChatGPT's API. Right now -- the AI is not active. Errors will show up if tried.
+
 CodeIt is a coding coach... what else?
