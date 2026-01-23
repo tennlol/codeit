@@ -5,6 +5,6 @@
 > This is in work in progress and is actively being worked in.
 
 > [!WARNING]
-> I need money to use ChatGPT's API. Right now -- the AI is not active. Errors will show up if tried.
+> I need money to use ChatGPT's API. Right now -- the AI is not active. A insufficent quota error will show up if tried. It's not your fault dw
 
 CodeIt is a coding coach... what else?
