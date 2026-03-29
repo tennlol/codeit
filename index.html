@@ -7,25 +7,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeIt</title>
+  <meta
+    name="description"
+    content="CodeIt is a coding coach interface for asking questions, pasting snippets, and getting guided help fast."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: sans-serif; margin: 40px; }
-    input { width: 300px; padding: 6px; margin-bottom: 10px; }
-    button { padding: 6px 12px; }
-    pre { background: #f1f1f1; padding: 10px; margin-top: 10px; }
-  </style>
 </head>
 <body>
-  <h1>CodeIt</h1>
-  <input id="userCode" placeholder="type code or question..." />
-  <button onclick="askCodeIt()">Run</button>
-  <pre id="output"></pre>
-  <!-- Not now -->
-<div class="toggle-mode">
-  <button id="toggle-mode">Toggle Dark Mode</button>
-</div>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="eyebrow">Coding Coach</p>
+        <div class="brand-row">
+          <h1>CodeIt</h1>
+          <span class="message-chip">AI Assistant</span>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <p class="topbar-note">Professional guidance for debugging, explanations, and rapid iteration</p>
+        <div class="toggle-mode">
+          <button id="toggle-mode" type="button">Toggle Theme</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace-stack">
+      <section class="hero-panel" aria-labelledby="workspace-title">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">Workspace</p>
+            <h2 id="workspace-title">Ask CodeIt Anything</h2>
+            <p class="hero-text">
+              Submit code, questions, or debugging requests and get a focused response in a clean workspace designed for shipping faster.
+            </p>
+          </div>
+          <div class="hero-badges" aria-label="Quick stats">
+            <span>Fast replies</span>
+            <span>Dark mode</span>
+            <span>Code guidance</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="output-card" aria-labelledby="output-title">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">Output</p>
+            <h2 id="output-title">Generated Response</h2>
+            <p class="helper-text">Responses appear here in a readable, scrollable workspace.</p>
+          </div>
+        </div>
+        <pre id="output">Response output will appear here.</pre>
+      </section>
+
+      <section class="composer-card" aria-label="Prompt composer">
+        <div class="composer-shell">
+          <button class="composer-icon" type="button" aria-label="Add prompt context">+</button>
+          <div class="composer-main">
+            <label class="input-label" for="userCode">Prompt or code snippet</label>
+            <textarea
+              id="userCode"
+              rows="3"
+              placeholder="Enter a prompt, code snippet, or debugging question..."
+            ></textarea>
+          </div>
+          <div class="composer-actions">
+            <button class="primary-action" id="submitPrompt" type="button">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-band" aria-label="Product details">
+        <article class="info-card">
+          <p class="panel-label">What it does</p>
+          <h3>Built for practical engineering help</h3>
+          <p>
+            CodeIt provides a lightweight interface for debugging, explaining code, and turning rough implementation ideas into something ready to ship.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <p class="panel-label">Why it works</p>
+          <ul class="panel-list">
+            <li>Focused top-first workspace</li>
+            <li>Clear response area with comfortable reading space</li>
+            <li>Bottom composer designed for fast prompt entry</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <p class="panel-label">Current flow</p>
+          <ul class="panel-list">
+            <li>Uses the existing prompt submission flow</li>
+            <li>Keeps the current scripts and analytics tags</li>
+            <li>Supports saved theme preferences</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="limits.js"></script>
   <script src="frontend.js"></script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
